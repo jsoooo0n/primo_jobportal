@@ -212,6 +212,8 @@ $(document).ready(function(){
 	   	var city = $(this).parent().siblings().find('#editCity').val();
 	   	var province = $(this).parent().siblings().find('#editProvince').val();
 	   	var country = $(this).parent().siblings().find('#editCountry').val();
+	   	var birthdate = $(this).parent().siblings().find('#editBirthdate').val();
+	   	var mobile_num = $(this).parent().siblings().find('#editMobile_num').val();
 	   	var overview = $(this).parent().siblings().find('#editOverview').val();
 	    $('.loading').show();   
 	   		 $.ajax({ 
@@ -225,6 +227,8 @@ $(document).ready(function(){
 		          city:city,
 		          province:province,
 		          country:country,
+		          birthdate:birthdate,
+		          mobile_num:mobile_num,
 		          overview:overview
 		        },success: function(data) {    
 			    location.reload();
@@ -243,6 +247,8 @@ $(document).ready(function(){
 	   	var city = $(this).parent().siblings().find('#editCity').val();
 	   	var province = $(this).parent().siblings().find('#editProvince').val();
 	   	var country = $(this).parent().siblings().find('#editCountry').val();
+	   	var birthdate = $(this).parent().siblings().find('#editBirthdate').val();
+	   	var mobile_num = $(this).parent().siblings().find('#editMobile_num').val();
 	   	var overview = $(this).parent().siblings().find('#editOverview').val();
 	    $('.loading').show();   
 	   		 $.ajax({ 
@@ -257,6 +263,8 @@ $(document).ready(function(){
 		          city:city,
 		          province:province,
 		          country:country,
+		          birthdate:birthdate,
+		          mobile_num:mobile_num,
 		          overview:overview
 		        },success: function(data) {    
 			    location.reload();

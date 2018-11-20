@@ -69,6 +69,9 @@
                       @if ($profile !== null)
                          {{$profile->city}}, {{$profile->province}} {{$profile->country}}
                        @endif</small>
+                       <br> <small class="h6 text-muted">Email:  {{$user !== null ? $user->email : ''}}</small>
+                       <br> <small class="h6 text-muted">Birthdate:  {{$profile !== null ? $profile->birthdate : ''}}</small>
+                       <br> <small class="h6 text-muted">Contact Number:  {{$profile !== null ? $profile->mobile_num : ''}}</small>
                 </div>
             </div>
 
@@ -110,6 +113,22 @@
                         <span class="input-group-text"><i class="fas fa-map-marker-alt"></i>&nbsp;Country</span>
                       </div>
                       <input type="text" id="editCountry" class="form-control"  name="country" value="{{$profile !== null ? $profile->country : ''}}">
+                    </div>
+                    <div class="input-group mb-3">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="fas fa-map-marker-alt"></i>&nbsp;Birthdate</span>
+                      </div>
+                      <input type="text" id="editBirthdate" class="form-control"  name="birthdate" value="{{$profile !== null ? $profile->birthdate : ''}}">
+                      <div id="datepicker" class="input-group date" data-date-format="mm-dd-yyyy">
+                      <input class="form-control" type="text" readonly />
+                      <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+                  </div>
+                    </div>
+                    <div class="input-group mb-3">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="fas fa-map-marker-alt"></i>&nbsp;Contact Number</span>
+                      </div>
+                      <input type="text" id="editMobile_num" class="form-control"  name="mobile_num" value="{{$profile !== null ? $profile->mobile_num : ''}}">
                     </div>
                     <div class="form-group">
                       <span class="input-group-text"><i class="fas fa-briefcase"></i>&nbsp;Overview</span>

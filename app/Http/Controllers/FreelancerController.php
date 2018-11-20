@@ -96,6 +96,8 @@ class FreelancerController extends Controller
         $profile->city = $request->city;
         $profile->province = $request->province;
         $profile->country = $request->country;
+        $profile->birthdate = $request->birthdate;
+        $profile->mobile_num = $request->mobile_num;
         $profile->user_id = Auth()->user()->id;
         $profile->overview = $request->overview;        
         $profile->save();
@@ -111,6 +113,8 @@ class FreelancerController extends Controller
         $profile->city = $request->city;
         $profile->province = $request->province;
         $profile->country = $request->country;
+        $profile->birthdate = $request->birthdate;
+        $profile->mobile_num = $request->mobile_num;
         $profile->overview = $request->overview;        
         $profile->save();
     }

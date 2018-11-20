@@ -28,6 +28,10 @@
                     <h5 class="h5">{{$profile !== null ? $profile->job_title : ''}}</h5>
                     <small class="h6 text-muted"><i class="fas fa-map-marker-alt"></i>  {{$profile !== null ? $profile->city.', '.$profile->province.', '.$profile->country : ''}}</small>
                 </div>
+                <!-- add
+                Birthday
+                mobile number
+                email -->
             </div>
             <div class="row mb-3">
                 <div class="col-12">
