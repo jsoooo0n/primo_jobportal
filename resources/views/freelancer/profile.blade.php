@@ -7,7 +7,14 @@
 
 @section('select2css')
    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
+
+
 @endsection
+
+
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"/>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
 
 
 @section('content')
@@ -69,9 +76,9 @@
                       @if ($profile !== null)
                          {{$profile->city}}, {{$profile->province}} {{$profile->country}}
                        @endif</small>
-                       <br> <small class="h6 text-muted">Email:  {{$user !== null ? $user->email : ''}}</small>
-                       <br> <small class="h6 text-muted">Birthdate:  {{$profile !== null ? $profile->birthdate : ''}}</small>
-                       <br> <small class="h6 text-muted">Contact Number:  {{$profile !== null ? $profile->mobile_num : ''}}</small>
+                       <br> <small class="h6 text-muted"><i class="fas fa-at"></i>   {{$user !== null ? $user->email : ''}}</small>
+                       <br> <small class="h6 text-muted"><i class="fas fa-birthday-cake"></i>   {{$profile !== null ? $profile->birthdate : ''}}</small>
+                       <br> <small class="h6 text-muted"><i class="fas fa-phone"></i>  {{$profile !== null ? $profile->mobile_num : ''}}</small>
                 </div>
             </div>
 
@@ -116,17 +123,13 @@
                     </div>
                     <div class="input-group mb-3">
                       <div class="input-group-prepend">
-                        <span class="input-group-text"><i class="fas fa-map-marker-alt"></i>&nbsp;Birthdate</span>
+                        <span class="input-group-text"><i class="fas fa-birthday-cake"></i>&nbsp;Birthdate</span>
                       </div>
-                      <input type="text" id="editBirthdate" class="form-control"  name="birthdate" value="{{$profile !== null ? $profile->birthdate : ''}}">
-                      <div id="datepicker" class="input-group date" data-date-format="mm-dd-yyyy">
-                      <input class="form-control" type="text" readonly />
-                      <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
-                  </div>
-                    </div>
+                        <input type="text" data-provide="datepicker" class="form-control input-group date" id="editBirthdate" name="birthdate" value="{{$profile !== null ? $profile->birthdate : ''}}">
+                    </div> 
                     <div class="input-group mb-3">
                       <div class="input-group-prepend">
-                        <span class="input-group-text"><i class="fas fa-map-marker-alt"></i>&nbsp;Contact Number</span>
+                        <span class="input-group-text"><i class="fas fa-phone"></i>&nbsp;Contact Number</span>
                       </div>
                       <input type="text" id="editMobile_num" class="form-control"  name="mobile_num" value="{{$profile !== null ? $profile->mobile_num : ''}}">
                     </div>
@@ -525,6 +528,7 @@
 @endsection
 @section('jsplugins')
    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
+
    <script type="text/javascript">
     $(document).ready(function(){
         $('.select2').select2({

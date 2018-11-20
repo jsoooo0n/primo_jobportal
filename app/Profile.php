@@ -15,4 +15,5 @@ class Profile extends Model
    function applicant() {
     	return $this->belongsTo('App\Applicant', 'applicants');
    }
+
 }
