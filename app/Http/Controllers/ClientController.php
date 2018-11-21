@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Job;
+use App\JobCategory;
 use App\User;
+use App\Profile;
 use App\Applicant;
 use Illuminate\Support\Facades\DB;
 class ClientController extends Controller
@@ -102,5 +104,54 @@ class ClientController extends Controller
 
         return redirect('jobs');
     }  
+
+
+        public function workerlist(Request $request) {
+        $categories = JobCategory::all();
+        $cat = $request->input('cat');
+        $search = $request->input('search');
+
+
+        if($request->has('cat') && $cat != 'all') {
+            if($request->has('search') && $search != null) {
+                $jobs = Profile::where('category_industry', $cat)
+                ->join('users', 'profiles.user_id', '=', 'users.id')
+                ->join('job_categories', 'profiles.category_industry', '=', 'job_categories.id')
+                ->where(function ($query) use ($search) {
+                        $query->where('title', 'like', '%'.$search.'%')
+                              ->orWhere('overview', 'like', '%'.$search.'%');
+                })->orderBy('profiles.created_at', 'desc')
+                ->paginate(5)
+                ->appends([
+                    'cat' => request('cat'),
+                    'search' => request('search')
+                ]);
+            } else {
+                $jobs = Profile::where('category_industry', $cat)
+                ->join('users', 'profiles.user_id', '=', 'users.id')
+                ->join('job_categories', 'profiles.category_industry', '=', 'job_categories.id')
+                ->orderBy('profiles.created_at', 'desc')
+                ->paginate(5)
+                ->appends([
+                    'cat' => request('cat')
+                ]);
+            } 
+        } else {
+
+
+
+            $jobs = Profile::where('job_title', 'like', '%'.$search.'%')
+            ->join('users', 'profiles.user_id', '=', 'users.id')
+            ->join('job_categories', 'profiles.category_industry', '=', 'job_categories.id')
+            ->orWhere('overview', 'like', '%'.$search.'%')
+            ->orderby('profiles.created_at', 'desc')
+            ->paginate(5)
+            ->appends([
+                'search' => request('search')
+            ]);
+        }
+        
+        return view('client.workerlist', compact('categories', 'jobs', 'cat', 'search'));
+    }
 
 }

@@ -38,8 +38,11 @@
 
              @if(Auth::user()->role == 2)
                 <ul class="navbar-nav mr-auto">
+                     <li class="nav-item">
+                        <a class="nav-link list-group-item list-group-item-action flex-column align-items-end" href="/workerlist">FIND WORKER<span class="sr-only">(current)</span></a>
+                    </li>
                     <li class="nav-item">
-                        <a class="nav-link list-group-item list-group-item-action flex-column align-items-end" href="/jobs">JOBS<span class="sr-only">(current)</span></a>
+                        <a class="nav-link list-group-item list-group-item-action flex-column align-items-end" href="/jobs">MY JOBS<span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link list-group-item list-group-item-action flex-column align-items-end" href="/dashboard">DASHBOARD</a>

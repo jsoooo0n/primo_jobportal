@@ -67,6 +67,8 @@ Route::get('/proposal/{id}/{user}/hire', 'ClientController@hire');
 
 Route::get('/proposal/{id}/{user}/reject', 'ClientController@reject');
 
+Route::get('/workerlist', 'ClientController@workerlist');
+
 // Work Controller
 
 Route::post('/profile/work/store', 'WorkController@storeWork');
