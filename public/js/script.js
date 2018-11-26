@@ -209,6 +209,9 @@ $(document).ready(function(){
    // Add Profile information
    $(document).on('click', '.addProfileButton', function(){ 
 	   	var title = $(this).parent().siblings().find('#editJobTitle').val();
+	   	var jobcategory = $(this).parent().siblings().find('#editJobCaetgoty').val();
+	   	var posotiontype = $(this).parent().siblings().find('#editJobPositionType').val();
+	   	var salary = $(this).parent().siblings().find('#editJobSalary').val();
 	   	var city = $(this).parent().siblings().find('#editCity').val();
 	   	var province = $(this).parent().siblings().find('#editProvince').val();
 	   	var country = $(this).parent().siblings().find('#editCountry').val();
@@ -224,6 +227,9 @@ $(document).ready(function(){
 		        },
 		        data: {
 		          title:title,
+		          jobcategory:jobcategory,
+		          posotiontype:posotiontype,
+		          salary:salary,
 		          city:city,
 		          province:province,
 		          country:country,
@@ -244,6 +250,9 @@ $(document).ready(function(){
    $(document).on('click', '.editProfileButton', function(){ 
 	   	var id = $(this).data('id');
 	   	var title = $(this).parent().siblings().find('#editJobTitle').val();
+	   	var category_industry = $(this).parent().siblings().find('#editJobCaetgoty').val();
+	   	var position_type = $(this).parent().siblings().find('#editJobPositionType').val();
+	   	var salary = $(this).parent().siblings().find('#editJobSalary').val();
 	   	var city = $(this).parent().siblings().find('#editCity').val();
 	   	var province = $(this).parent().siblings().find('#editProvince').val();
 	   	var country = $(this).parent().siblings().find('#editCountry').val();
@@ -260,6 +269,9 @@ $(document).ready(function(){
 		        data: {
 		       	  id: id,
 		          title:title,
+		          category_industry:category_industry,
+		          position_type:position_type,
+		          salary:salary,
 		          city:city,
 		          province:province,
 		          country:country,

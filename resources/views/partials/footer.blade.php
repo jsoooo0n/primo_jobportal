@@ -46,7 +46,7 @@
 		<div class="row mt-5">
 			<div class="col footer">
 				<div class="col-sm copyright">
-					<h6 class="h6">© 2018 iConnect.ml. All rights reserved</h6>
+					<h6 class="h6">© 2018 Primo Job Portal All rights reserved</h6>
 				</div>
 				<div class="col-sm socialicons">
 					<i class="px-1 fab fa-facebook fa-3x"></i>

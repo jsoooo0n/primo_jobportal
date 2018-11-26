@@ -97,41 +97,82 @@
                     </button>
                   </div>
                   <div class="modal-body editworksbody">
+                    <h5 class="d-inline-block h5 text-success font-weight-bold mb-0">Job Preference</h5>
+                    <hr>
                     <div class="input-group mb-3">
                       <div class="input-group-prepend">
                         <span class="input-group-text"><i class="fas fa-briefcase"></i>&nbsp;Title</span>
                       </div>
                       <input type="text" id="editJobTitle" class="form-control" name="edit_job_title" value="{{$profile !== null ? $profile->job_title : ''}}">
                     </div>
+
+
+                    <div class="input-group mb-3">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="fas fa-briefcase"></i>&nbsp;Job Category</span>
+                      </div>
+                      <select class="form-control" id="editJobCaetgoty" name="edit_job_category">
+                                    @foreach ($categories as $category)
+                                        <option value="{{$category->id}}">{{$category->category_name}}</option>
+                                    @endforeach
+                      </select>
+
+                      <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="fas fa-briefcase"></i>&nbsp;Position Type</span>
+                      </div>
+                      <select name="edit_job_position_type" class="form-control" id="editJobPositionType">
+                          <option value="part-time">Part-Time</option>
+                          <option value="full-time">Full-Time</option>
+                      </select>
+                      <!-- <input type="text" id="editJobTitle" class="form-control" name="edit_job_title" value="{{$profile !== null ? $profile->job_title : ''}}"> -->
+                    </div>
+
+                    <div class="input-group mb-3">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="fas  fa-dollar-sign"></i>&nbsp;Salary</span>
+                      </div>
+                      <input type="number" id="editJobSalary" class="form-control" name="edit_job_salary" value="{{$profile !== null ? $profile->salary : ''}}">
+
+                      <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="fas fa-clock"></i>&nbsp;Working Hours</span>
+                      </div>
+                      <input type="text" id="editJobworkhours" class="form-control" name="edit_job_time" value="">
+                    </div>
+
+
+                    <h5 class="d-inline-block h5 text-success font-weight-bold mb-0">Personal Informaton</h5>
+                    <hr>
+                
                     <div class="input-group mb-3">
                       <div class="input-group-prepend">
                         <span class="input-group-text"><i class="fas fa-map-marker-alt" va></i>&nbsp;City</span>
                       </div>
                       <input type="text" id="editCity" class="form-control"  name="edit_city" value="{{$profile !== null ? $profile->city : ''}}">
-                    </div>
-                    <div class="input-group mb-3">
+
                       <div class="input-group-prepend">
                         <span class="input-group-text"><i class="fas fa-map-marker-alt"></i>&nbsp;Province</span>
                       </div>
                       <input type="text" id="editProvince" class="form-control"  name="edit_province" value="{{$profile !== null ? $profile->province : ''}}">
-                    </div>
-                    <div class="input-group mb-3">
+                      
+
                       <div class="input-group-prepend">
                         <span class="input-group-text"><i class="fas fa-map-marker-alt"></i>&nbsp;Country</span>
                       </div>
                       <input type="text" id="editCountry" class="form-control"  name="country" value="{{$profile !== null ? $profile->country : ''}}">
+
                     </div>
+                    
                     <div class="input-group mb-3">
                       <div class="input-group-prepend">
                         <span class="input-group-text"><i class="fas fa-birthday-cake"></i>&nbsp;Birthdate</span>
                       </div>
                         <input type="text" data-provide="datepicker" class="form-control input-group date" id="editBirthdate" name="birthdate" value="{{$profile !== null ? $profile->birthdate : ''}}">
-                    </div> 
-                    <div class="input-group mb-3">
-                      <div class="input-group-prepend">
+                        <div class="input-group-prepend">
                         <span class="input-group-text"><i class="fas fa-phone"></i>&nbsp;Contact Number</span>
                       </div>
                       <input type="text" id="editMobile_num" class="form-control"  name="mobile_num" value="{{$profile !== null ? $profile->mobile_num : ''}}">
+                    </div> 
+                    <div class="input-group mb-3">
                     </div>
                     <div class="form-group">
                       <span class="input-group-text"><i class="fas fa-briefcase"></i>&nbsp;Overview</span>

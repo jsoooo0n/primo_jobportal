@@ -162,6 +162,11 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
+
+        // json additional
+
+        RenatoMarinho\LaravelPageSpeed\ServiceProvider::class,
+
     ],
 
     /*

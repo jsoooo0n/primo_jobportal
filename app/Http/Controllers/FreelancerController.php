@@ -75,6 +75,7 @@ class FreelancerController extends Controller
         } 
         $user_id = Auth()->user()->id;
         $user = User::find($user_id);
+        $categories = JobCategory::all();
         $skills = Skill::orderBy('skill', 'asc')->get();     
         $profile = Profile::where('user_id', $user->id)->first();
         $educations = Education::where('user_id', $user->id)
@@ -83,7 +84,7 @@ class FreelancerController extends Controller
         $works = Work::where('user_id', $user->id)
                     ->orderBy('created_at', 'desc')
                     ->get(); 
-        return view('freelancer.profile', compact('user', 'profile', 'skills', 'educations', 'works'));
+        return view('freelancer.profile', compact('user','categories', 'profile', 'skills', 'educations', 'works'));
     }
 
     public function storeProfile(Request $request) {
@@ -93,6 +94,9 @@ class FreelancerController extends Controller
 
         $profile = new Profile;
         $profile->job_title = $request->title;
+        $profile->category_industry = $request->category_industry;
+        $profile->position_type = $request->position_type;
+        $profile->salary = $request->salary;
         $profile->city = $request->city;
         $profile->province = $request->province;
         $profile->country = $request->country;
@@ -110,6 +114,9 @@ class FreelancerController extends Controller
         $id = $request->id;
         $profile = Profile::where('user_id', $id)-> first();
         $profile->job_title = $request->title;
+        $profile->category_industry = $request->category_industry;
+        $profile->position_type = $request->position_type;
+        $profile->salary = $request->salary;
         $profile->city = $request->city;
         $profile->province = $request->province;
         $profile->country = $request->country;
