@@ -5,70 +5,309 @@
 @endsection
 
 @section('content')
-     <div class="jumbotron">
-        <div class="mx-auto align-middle jumbotron-content">
-            <div>
-              <h1 class="display-4 h1">Find The Job That Fits Your Skills</h1>
-              <form action="/userdashboard" method="get">
-                <div class="input-group mb-3 w-50">
-                  <input type="text" class="form-control" placeholder="Search Jobs" aria-label="Amount (rounded to the nearest dollar)" aria-describedby="basic-addon" name="search">
-                  <div class="input-group-append">
-                    <button class="input-group-text bg-info text-light" id="basic-addon" type="submit"><i class="fas fa-search"></i></button>
-                  </div>
+     <!-- start banner Area -->
+            <section class="banner-area relative" id="home">    
+                <div class="overlay overlay-bg"></div>
+                <div class="container">
+                    <div class="row fullscreen d-flex align-items-center justify-content-center">
+                        <div class="banner-content col-lg-12">
+                            <h1 class="text-white">
+                                <span>1500+</span> Jobs posted last week                
+                            </h1>   
+                            <form action="search.html" class="serach-form-area">
+                                <div class="row justify-content-center form-wrap">
+                                    <div class="col-lg-4 form-cols">
+                                        <input type="text" class="form-control" name="search" placeholder="what are you looging for?">
+                                    </div>
+                                    <div class="col-lg-3 form-cols">
+                                        <div class="default-select" id="default-selects"">
+                                            <select>
+                                                <option value="1">Select area</option>
+                                                <option value="2">Dhaka</option>
+                                                <option value="3">Rajshahi</option>
+                                                <option value="4">Barishal</option>
+                                                <option value="5">Noakhali</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3 form-cols">
+                                        <div class="default-select" id="default-selects2">
+                                            <select>
+                                                <option value="1">All Category</option>
+                                                <option value="2">Medical</option>
+                                                <option value="3">Technology</option>
+                                                <option value="4">Goverment</option>
+                                                <option value="5">Development</option>
+                                            </select>
+                                        </div>                                      
+                                    </div>
+                                    <div class="col-lg-2 form-cols">
+                                        <button type="button" class="btn btn-info">
+                                          <span class="lnr lnr-magnifier"></span> Search
+                                        </button>
+                                    </div>                              
+                                </div>
+                            </form> 
+                            <p class="text-white"> <span>Search by tags:</span> Tecnology, Business, Consulting, IT Company, Design, Development</p>
+                        </div>                                          
+                    </div>
                 </div>
-              </form>  
-          </div>
-       </div>
-    </div>
-    <section id="BrowseCategories">
-        <div class="container">
-            <h2 class="h2 text-center">Browse Freelance Services</h2>
-            <h4 class="h4 text-center mb-5 text-muted">Get inspired to build your business</h4>
-            <div class="row mb-5">
-                <div class="col-sm text-center hvr-grow"><a href="/userdashboard?cat=1">
-                    <i class="fas fa-paint-brush fa-5x text-muted"></i><br><br>  
-                   <h5 class="h5 text-muted"> Graphics &amp; Design</h5></a>
-                </div>
-                <div class="col-sm text-center hvr-grow"><a href="/userdashboard?cat=2">
-                    <i class="fas fa-code fa-5x text-muted"></i><br>  <br>  
-                    <h5 class="h5 text-muted">Programming &amp; Tech</h5></a> 
-                </div>
-                <div class="col-sm text-center hvr-grow"><a href="/userdashboard?cat=3">
-                    <i class="far fa-chart-bar fa-5x text-muted"></i><br><br>  
-                    <h5 class="h5 text-muted">Digital Marketing</h5></a>
-                </div>
-                <div class="col-sm text-center hvr-grow"><a href="/userdashboard?cat=4">
-                    <i class="fas fa-pencil-alt fa-5x text-muted"></i><br><br>  
-                    <h5 class="h5 text-muted"> Writing &amp; Translation</h5></a>
-                </div>
-            </div>
-            <div class="row mb-5">
-                <div class="col-sm text-center hvr-grow"><a href="/userdashboard?cat=5">
-                    <i class="fas fa-video fa-5x text-muted"></i><br><br>  
-                   <h5 class="h5 text-muted">Video &amp; Animation</h5></a>
-                </div>
-                <div class="col-sm text-center hvr-grow"><a href="/userdashboard?cat=6">
-                    <i class="fas fa-keyboard fa-5x text-muted"></i><br>  <br>  
-                    <h5 class="h5 text-muted">Admin Support</h5></a>
-                </div>
-                <div class="col-sm text-center hvr-grow"><a href="/userdashboard?cat=7">
-                    <i class="fas fa-cog fa-5x text-muted"></i><br><br>  
-                    <h5 class="h5 text-muted">Architecture &amp; Engineering</h5></a>
-                </div>
-                <div class="col-sm text-center hvr-grow"><a href="/userdashboard?cat=8">
-                    <i class="fas fa-chart-pie fa-5x text-muted"></i><br><br>  
-                    <h5 class="h5 text-muted">Management &amp; Finance</h5></a>
-                </div>
-            </div>
-        </div>
-    </section> 
-    <section id="vectorimages" class="pt-1">
-        <div class="col-sm">
-           <h2 class="h2 mt-5">Why Freelancing?</h2>
-           <p class="text-dark">Working from home is an ideal solution for balancing work and family or private life, during which you can successfully make for a living and support yourself and your family. Working from home and thereby carve out a comfortable life, it is fully possible. But, only if you are willing to work hard. The obvious advantages of such operations are often sufficient to lure professionals from the offices in the comfort of your home.</p>
-        </div>
-        <div class="col-sm">
-            <img src="/storage/assets/freelancervector.jpg" class="img-fluid">
-        </div>
-    </section>
+            </section>
+            <!-- End banner Area -->    
+
+            <!-- Start features Area -->
+            <section class="features-area">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-3 col-md-6">
+                            <div class="single-feature">
+                                <h4>Searching</h4>
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6">
+                            <div class="single-feature">
+                                <h4>Applying</h4>
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6">
+                            <div class="single-feature">
+                                <h4>Security</h4>
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6">
+                            <div class="single-feature">
+                                <h4>Notifications</h4>
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing.
+                                </p>
+                            </div>
+                        </div>                                                                      
+                    </div>
+                </div>  
+            </section>
+            <!-- End features Area -->
+            
+            <!-- Start popular-post Area -->
+            <section class="popular-post-area pt-100">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="active-popular-post-carusel">
+                            <div class="single-popular-post d-flex flex-row">
+                                <div class="thumb">
+                                    <img class="img-fluid" src="img/p1.png" alt="">
+                                    <a class="btns text-uppercase" href="#">view job post</a>
+                                </div>
+                                <div class="details">
+                                    <a href="#"><h4>Creative Designer</h4></a>
+                                    <h6>Los Angeles</h6>
+                                    <p>
+                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod temporinc ididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam quis.
+                                    </p>
+                                </div>
+                            </div>  
+                            <div class="single-popular-post d-flex flex-row">
+                                <div class="thumb">
+                                    <img src="img/p2.png" alt="">
+                                    <a class="btns text-uppercase" href="#">view job post</a>
+                                </div>
+                                <div class="details">
+                                    <a href="#"><h4>Creative Designer</h4></a>
+                                    <h6>Los Angeles</h6>
+                                    <p>
+                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod temporinc ididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam quis.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="single-popular-post d-flex flex-row">
+                                <div class="thumb">
+                                    <img src="img/p1.png" alt="">
+                                    <a class="btns text-uppercase" href="#">view job post</a>
+                                </div>
+                                <div class="details">
+                                    <a href="#"><h4>Creative Designer</h4></a>
+                                    <h6>Los Angeles</h6>
+                                    <p>
+                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod temporinc ididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam quis.
+                                    </p>
+                                </div>
+                            </div>  
+                            <div class="single-popular-post d-flex flex-row">
+                                <div class="thumb">
+                                    <img src="img/p2.png" alt="">
+                                    <a class="btns text-uppercase" href="#">view job post</a>
+                                </div>
+                                <div class="details">
+                                    <a href="#"><h4>Creative Designer</h4></a>
+                                    <h6>Los Angeles</h6>
+                                    <p>
+                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod temporinc ididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam quis.
+                                    </p>
+                                </div>
+                            </div>  
+                            <div class="single-popular-post d-flex flex-row">
+                                <div class="thumb">
+                                    <img src="img/p1.png" alt="">
+                                    <a class="btns text-uppercase" href="#">view job post</a>
+                                </div>
+                                <div class="details">
+                                    <a href="#"><h4>Creative Designer</h4></a>
+                                    <h6>Los Angeles</h6>
+                                    <p>
+                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod temporinc ididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam quis.
+                                    </p>
+                                </div>
+                            </div>  
+                            <div class="single-popular-post d-flex flex-row">
+                                <div class="thumb">
+                                    <img src="img/p2.png" alt="">
+                                    <a class="btns text-uppercase" href="#">view job post</a>
+                                </div>
+                                <div class="details">
+                                    <a href="#"><h4>Creative Designer</h4></a>
+                                    <h6>Los Angeles</h6>
+                                    <p>
+                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod temporinc ididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam quis.
+                                    </p>
+                                </div>
+                            </div>                                                                                                                                                          
+                        </div>
+                    </div>
+                </div>  
+            </section>
+            <!-- End popular-post Area -->
+            
+            <!-- Start feature-cat Area -->
+            <section class="feature-cat-area pt-100" id="category">
+                <div class="container">
+                    <div class="row d-flex justify-content-center">
+                        <div class="menu-content pb-60 col-lg-10">
+                            <div class="title text-center">
+                                <h1 class="mb-10">Featured Job Categories</h1>
+                                <p>Who are in extremely love with eco friendly system.</p>
+                            </div>
+                        </div>
+                    </div>                      
+                    <div class="row">
+                        <div class="col-lg-2 col-md-4 col-sm-6">
+                            <div class="single-fcat">
+                                <a href="category.html">
+                                    <img src="img/o1.png" alt="">
+                                </a>
+                                <p>Accounting</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-2 col-md-4 col-sm-6">
+                            <div class="single-fcat">
+                                <a href="category.html">
+                                    <img src="img/o2.png" alt="">
+                                </a>
+                                <p>Development</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-2 col-md-4 col-sm-6">
+                            <div class="single-fcat">
+                                <a href="category.html">
+                                    <img src="img/o3.png" alt="">
+                                </a>
+                                <p>Technology</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-2 col-md-4 col-sm-6">
+                            <div class="single-fcat">
+                                <a href="category.html">
+                                    <img src="img/o4.png" alt="">
+                                </a>
+                                <p>Media & News</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-2 col-md-4 col-sm-6">
+                            <div class="single-fcat">
+                                <a href="category.html">
+                                    <img src="img/o5.png" alt="">
+                                </a>
+                                <p>Medical</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-2 col-md-4 col-sm-6">
+                            <div class="single-fcat">
+                                <a href="category.html">
+                                    <img src="img/o6.png" alt="">
+                                </a>
+                                <p>Goverment</p>
+                            </div>          
+                        </div>                                                                                                          
+                    </div>
+                </div>  
+            </section>
+            <!-- End feature-cat Area -->
+               
+
+            <!-- Start callto-action Area -->
+            <section class="callto-action-area section-gap" id="join">
+                <div class="container">
+                    <div class="row d-flex justify-content-center">
+                        <div class="menu-content col-lg-9">
+                            <div class="title text-center">
+                                <h1 class="mb-10 text-white">Join us today without any hesitation</h1>
+                                <p class="text-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore  et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>
+                                <a class="primary-btn" href="#">I am a Candidate</a>
+                                <a class="primary-btn" href="#">Request Free Demo</a>
+                            </div>
+                        </div>
+                    </div>  
+                </div>  
+            </section>
+            <!-- End calto-action Area -->
+
+            <!-- Start download Area -->
+            <section class="download-area section-gap" id="app">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-6 download-left">
+                            <img class="img-fluid" src="img/d1.png" alt="">
+                        </div>
+                        <div class="col-lg-6 download-right">
+                            <h1>Download the <br>
+                            Job Listing App Today!</h1>
+                            <p class="subs">
+                                It won’t be a bigger problem to find one video game lover in your neighbor. Since the introduction of Virtual Game, it has been achieving great heights so far as its popularity and technological advancement are concerned.
+                            </p>
+                            <div class="d-flex flex-row">
+                                <div class="buttons">
+                                    <i class="fa fa-apple" aria-hidden="true"></i>
+                                    <div class="desc">
+                                        <a href="#">
+                                            <p>
+                                                <span>Available</span> <br>
+                                                on App Store
+                                            </p>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="buttons">
+                                    <i class="fa fa-android" aria-hidden="true"></i>
+                                    <div class="desc">
+                                        <a href="#">
+                                            <p>
+                                                <span>Available</span> <br>
+                                                on Play Store
+                                            </p>
+                                        </a>
+                                    </div>
+                                </div>                                  
+                            </div>                      
+                        </div>
+                    </div>
+                </div>  
+            </section>
+            <!-- End download Area -->
 @endsection

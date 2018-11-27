@@ -1,99 +1,61 @@
- <nav class="navbar navbar-expand-sm navbar-light navbar-laravel">
-        <a class="navbar-brand" href="{{ url('/') }}">
-           <img src="{{ asset('storage/assets/iconnect.png') }}" id="mylogo">
-        </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+              <header id="header" id="home">
+                <div class="container">
+                    <div class="row align-items-center justify-content-between d-flex">
+                      <div id="logo">
+                        <a href="{{ url('/') }}"><img src="{{ asset('storage/logo.png') }}" alt="" title="" /></a>
+                      </div>
+                      <nav id="nav-menu-container">
+                        <ul class="nav-menu">
 
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            @guest
-            <!-- Left Side Of Navbar -->
-              <ul class="navbar-nav mr-auto">
-                <li class="nav-item">
-                    <a class="nav-link list-group-item list-group-item-action flex-column align-items-end" href="/userdashboard">FIND WORK<span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link list-group-item list-group-item-action flex-column align-items-end" href="/how-it-works">HOW IT WORKS</a>
-                </li>
-              </ul>
-            @else
-            @if(Auth::user()->role == 1)
-                <!-- Left Side Of Navbar -->
-                  <ul class="navbar-nav mr-auto">
-                     <li class="nav-item">
-                        <a class="nav-link list-group-item list-group-item-action flex-column align-items-end" href="/userdashboard">FIND WORK<span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link list-group-item list-group-item-action flex-column align-items-end" href="/profile/{{str_slug(strtolower(Auth::user()->name), '-')}}">PROFILE</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link list-group-item list-group-item-action flex-column align-items-end" href="/my-jobs">MY JOBS</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link list-group-item list-group-item-action flex-column align-items-end" href="">MESSAGES</a>
-                    </li>
-                  </ul>                      
-             @endif  
+                             @guest
+                                <li><a href="/userdashboard">Find Work</a></li>
+                                <li><a href="/how-it-work">How it Works</a></li>
+                             @else
+                             @if(Auth::user()->role == 1)
+                                <li><a href="/userdashboard">Find Work</a></li>
+                                <li><a href="/profile/{{str_slug(strtolower(Auth::user()->name), '-')}}">Profile</a></li>
+                                <li><a href="/my-jobs">My Jobs</a></li>
+                                <li><a href="#">Message</a></li>
+                             @endif  
 
-             @if(Auth::user()->role == 2)
-                <ul class="navbar-nav mr-auto">
-                     <li class="nav-item">
-                        <a class="nav-link list-group-item list-group-item-action flex-column align-items-end" href="/workerlist">FIND WORKER<span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link list-group-item list-group-item-action flex-column align-items-end" href="/jobs">MY JOBS<span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link list-group-item list-group-item-action flex-column align-items-end" href="/dashboard">DASHBOARD</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link list-group-item list-group-item-action flex-column align-items-end" href="">MESSAGES</a>
-                    </li> 
-                 </ul>                      
-             @endif     
-             @if(Auth::user()->role == 3)    
-                 <ul class="navbar-nav mr-auto">
-                     <li class="nav-item">
-                        <a class="nav-link list-group-item list-group-item-action flex-column align-items-end" href="/panel/freelancer">FREELANCERS<span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link list-group-item list-group-item-action flex-column align-items-end" href="/panel/clients">CLIENTS</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link list-group-item list-group-item-action flex-column align-items-end" href="/panel/jobs">JOBS</a>
-                    </li>
-                  </ul>                     
-              @endif  
-            @endguest      
-            <!-- Right Side Of Navbar -->
-            <ul class="navbar-nav ml-auto list-group">
-                <!-- Authentication Links -->
-                @guest
-                    <li><a class="nav-link list-group-item list-group-item-action flex-column align-items-end" href="{{ route('login') }}">LOGIN</a></li>
-                    <li><a class="nav-link list-group-item list-group-item-action flex-column align-items-end" href="{{ route('register') }}">SIGN UP</a></li>
-                    <li><a class="nav-link" href=""><button class="btn btn-sm align-middle btn-info" type="button">POST A JOB</button></a></li>
-                @else
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            {{ Auth::user()->name }} <span class="caret"></span>
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            @if(Auth::user()->role == 1)
-                                <a href="/dashboard" class="dropdown-item" >Account Settings</a>
+                             @if(Auth::user()->role == 2)
+                                <li><a href="/userdashboard">Find Work</a></li>
+                                <li><a href="/profile/{{str_slug(strtolower(Auth::user()->name), '-')}}">Profile</a></li>
+                                <li><a href="/my-jobs">My Jobs</a></li>
+                                <li><a href="#">Message</a></li>
+                            @endif     
+                            @if(Auth::user()->role == 3)
+                                <li><a href="/panel/freelancer">Jobseeker</a></li>
+                                <li><a href="/panel/clients">Cleints</a></li>
+                                <li><a href="/panel/jobs">Jobs</a></li>
+
                             @endif  
-                            <a class="dropdown-item" href="{{ route('logout') }}"
-                               onclick="event.preventDefault();
-                                             document.getElementById('logout-form').submit();">
-                                Logout
-                            </a>
+                            @endguest
 
-                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                @csrf
-                            </form>
-                        </div>
-                    </li>
-                @endguest
-            </ul>
-        </div>
-</nav>
+                           @guest
+                          <li><a class="ticker-btn" href="{{ route('login') }}">Login</a></li>
+                          <li><a class="ticker-btn" href="{{ route('register') }}">Signup</a></li>
+                           @else
+                          <li class="menu-has-children"><a href="">{{ Auth::user()->name }}</a>
+                            <ul>
+                                 @if(Auth::user()->role == 1)
+                                <li><a href="/dashboard">Account Settings</a></li>
+                                  @endif  
+                                <li><a href="{{ route('logout') }}"
+                                            onclick="event.preventDefault();
+                                            document.getElementById('logout-form').submit();">Logout</a>
+                                        
+                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                            @csrf
+                                        </form>
+
+                                    </li>
+                            </ul>
+                          </li>
+                    
+                            @endguest                                                 
+                        </ul>
+                      </nav><!-- #nav-menu-container -->                    
+                    </div>
+                </div>
+              </header><!-- #header -->

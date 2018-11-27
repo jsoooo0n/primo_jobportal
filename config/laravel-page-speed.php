@@ -54,7 +54,9 @@ return [
         '*.iso',
         '*.flv',
         '*.m4v',
-        '*.torrent'
+        '*.torrent',
+        '*/downloads/*',//Ignore all routes that contain 'downloads'
+        'assets/*', // Ignore all routes with the 'assets' prefix
     ],
 
 ];
