@@ -12,18 +12,18 @@
                         <ul class="nav-menu">
 
                              @guest
-                                <li><a href="/userdashboard">Find Work</a></li>
+                                <li><a href="/userdashboard">Find Job</a></li>
                                 <li><a href="/how-it-work">How it Works</a></li>
                              @else
                              @if(Auth::user()->role == 1)
-                                <li><a href="/userdashboard">Find Work</a></li>
+                                <li><a href="/userdashboard">Find Job</a></li>
                                 <li><a href="/profile/{{str_slug(strtolower(Auth::user()->name), '-')}}">Profile</a></li>
                                 <li><a href="/my-jobs">My Jobs</a></li>
                                 <li><a href="#">Message</a></li>
                              @endif  
 
                              @if(Auth::user()->role == 2)
-                                <li><a href="/workerlist">Find Worker</a></li>
+                                <li><a href="/workerlist">Find Jobseeker</a></li>
                                 <li><a href="/jobs">Job Posted</a></li>
                                 <li><a href="/dashboard">Dashboard</a></li>
                                 <li><a href="#">Message</a></li>

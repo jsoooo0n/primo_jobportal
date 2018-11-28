@@ -7,6 +7,17 @@
 @section('content')
 
 <section class="post-area section-gap">
+
+				<div class="container callto-action-area">
+					<div class="row d-flex justify-content-center">
+						<div class="menu-content col-lg-9">
+							<div class="title text-center">
+								<h1 class="mb-10 mt-20 text-white">Jobseeker List</h1>
+							</div>	
+						</div>
+					</div>	
+				</div><br>
+
 				<div class="container">
 					<div class="row justify-content-center d-flex">
 						<div class="col-lg-8 post-list">
