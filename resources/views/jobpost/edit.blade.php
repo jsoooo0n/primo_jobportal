@@ -7,12 +7,12 @@
 
 
 @section('content')
-<div class="container">
+<div class="container section-gap">
     <div class="row justify-content-center">
         <div class="col-md-10 my-5 editFile">            
             @include('partials.alert')
-            <div class="card card-default">  
-                <div class="card-header"><h3 class="h3 text-center text-info">Edit Job Post</h3></div>
+            <div class="card card-default">
+            <div class="card-header contact-btns"><h3 class="h3 text-center text-white">Edit Job Post</h3></div>  
                 <div class="card-body">
                   <form method="POST" id="updateJobForm" action="/jobs/{{ $job->id }}">
                   	{{ csrf_field() }}
@@ -62,8 +62,12 @@
 					  </div>
 					  <input type="hidden" name="status" value="active">
 					  <input type="hidden" name="_method" value="put" />
-					  <button type="submit" class="btn btn-info" id="updateJobButton" data-id="{{$job->id}}">Update Job Post</button>
-					  <span class="float-right"><a href="/dashboard"><button type="button" class="btn btn-success" >Back to dashboard</button></a></span>
+					  <button type="submit" class="genric-btn primary"  id="updateJobButton" data-id="{{$job->id}}" style="width: 40%;">
+                                    Update Job Post
+                                </button>
+							<button type="submit" class="float-right genric-btn danger" style="width: 40%;">
+                                    Back to dashboard
+                                </button>
                   </form>
                 </div>
             </div>

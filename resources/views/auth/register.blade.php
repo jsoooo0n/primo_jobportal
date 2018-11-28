@@ -7,7 +7,7 @@
         <div class="col-md-8">        
             @include('partials.alert')
             <div class="card card-default">
-                <div class="card-header bg-info text-white text-center"><h3 class="h3">Register</h3></div>
+                <div class="contact-btns" ><h2 class="h2 text-white">Register</h2></div>
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('register') }}">
@@ -75,9 +75,12 @@
                         </div>
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-info">
+                                <button type="submit" class="genric-btn primary" style="width: 50%;">
                                     Register
                                 </button>
+                                <!-- <button type="submit" class="btn btn-info">
+                                    Register
+                                </button> -->
                             </div>
                         </div>
                     </form>

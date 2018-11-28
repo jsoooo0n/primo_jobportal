@@ -8,12 +8,12 @@
         <div class="col-md-8">        
             @include('partials.alert')
             <div class="card card-default">
-                <div class="card-header bg-info text-center text-white"><h3 class="h3">Login</h3></div>
+                <div class="contact-btns" ><h2 class="h2 text-white">Login</h2></div>
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('login') }}">
                         @csrf
-
+                        
                         <div class="form-group row">
                             <label for="email" class="col-sm-4 col-form-label text-md-right">Name</label>
 
@@ -51,13 +51,14 @@
                                 </div>
                             </div>
                         </div>
-
+                    
                         <div class="form-group row mb-0">
                             <div class="col-md-8 offset-md-4">
-                                <button type="submit" class="btn btn-info">
+
+                                <button type="submit" class="genric-btn primary" style="width: 50%;">
                                     Login
                                 </button>
-
+                                <br>
                                 <a class="btn btn-link" href="{{ route('password.request') }}">
                                     Forgot Your Password?
                                 </a>

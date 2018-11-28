@@ -7,18 +7,25 @@
 
 
 @section('content')
-<div class="container">
+<div class="container section-gap"">
     <div class="row justify-content-center">
         <div class="col-md-10 my-5">            
             @include('partials.alert')
             <div class="card card-default">  
-                <div class="card-header"><h3 class="h3 d-inline-block text-info">Client Dashboard</h3><span class="float-right"><a href="/jobs/create"><button class="btn btn-info">Post a Job</button></a></span></div>
+                <div class="card-header contact-btns"><h3 class="h3 d-inline-block text-white">Client Dashboard</h3>
+                  <a href="/jobs/create">
+                <button type="submit" class="float-right genric-btn danger" style="font-size: .8em;">Post a Job</button></a>
+
+                  <!-- <span class="float-right"><a href="/jobs/create">
+                    <button class="btn btn-info">Post a Job</button></a>
+                  </span> -->
+                </div>
                 <div class="card-body pt-0 table-responsive">
                    @if(count($jobs) > 0)
                       <table class="table table-striped " id="jobTable">
                           <thead>
                             <tr>
-                              <th>Job</th>
+                              <th>Job Title</th>
                               <th>Date Posted</th>
                               <th>Posted By</th>                  
                               <th></th>

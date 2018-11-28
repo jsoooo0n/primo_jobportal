@@ -7,12 +7,12 @@
 
 
 @section('content')
-<div class="container">
+<div class="container section-gap">
     <div class="row justify-content-center">
         <div class="col-md-10 my-5">            
             @include('partials.alert')
             <div class="card card-default">  
-                <div class="card-header"><h3 class="h3 text-center text-info">Create a Job Post</h3></div>
+                <div class="card-header contact-btns"><h3 class="h3 text-center text-white">Create a Job Post</h3></div>
                 <div class="card-body">
                   <form method="POST" action="/jobs">
                   	{{ csrf_field() }}
@@ -60,7 +60,15 @@
 						    </select>
 						  </div>
 					  </div>
-					  <button type="submit" class="btn btn-info">Submit</button>
+						<br>
+					   <div class="row">
+						    <div class="form-group col-md-12 text-center">
+						    	<button type="submit" class="genric-btn primary" style="width: 40%;">
+                                    Create Job Post
+                                </button>
+						  		<!-- <button type="submit" class="btn btn-info">Submit</button> -->
+							</div>
+						</div>
                   </form>
                 </div>
             </div>

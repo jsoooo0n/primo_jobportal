@@ -2,7 +2,11 @@
                 <div class="container">
                     <div class="row align-items-center justify-content-between d-flex">
                       <div id="logo">
-                        <a href="{{ url('/') }}"><img src="{{ asset('storage/logo.png') }}" alt="" title="" /></a>
+                        <!-- <a href="{{ url('/') }}"><img src="{{ asset('storage/logo.png') }}" alt="" title="" /></a> -->
+                        <a href="{{ url('/') }}">
+                        <span class="text-white">>Primo Job Portal</span>
+                        </a>
+                        
                       </div>
                       <nav id="nav-menu-container">
                         <ul class="nav-menu">
@@ -19,9 +23,9 @@
                              @endif  
 
                              @if(Auth::user()->role == 2)
-                                <li><a href="/userdashboard">Find Work</a></li>
-                                <li><a href="/profile/{{str_slug(strtolower(Auth::user()->name), '-')}}">Profile</a></li>
-                                <li><a href="/my-jobs">My Jobs</a></li>
+                                <li><a href="/workerlist">Find Worker</a></li>
+                                <li><a href="/jobs">Job Posted</a></li>
+                                <li><a href="/dashboard">Dashboard</a></li>
                                 <li><a href="#">Message</a></li>
                             @endif     
                             @if(Auth::user()->role == 3)
@@ -36,7 +40,7 @@
                           <li><a class="ticker-btn" href="{{ route('login') }}">Login</a></li>
                           <li><a class="ticker-btn" href="{{ route('register') }}">Signup</a></li>
                            @else
-                          <li class="menu-has-children"><a href="">{{ Auth::user()->name }}</a>
+                          <li class="menu-has-children"><a href="">{{ Auth::user()->name }} <i class="fa fa-caret-down"></i></a>
                             <ul>
                                  @if(Auth::user()->role == 1)
                                 <li><a href="/dashboard">Account Settings</a></li>

@@ -840,7 +840,7 @@ h1, h2, h3, h4, h5, h6 {
   outline: none;
   line-height: 40px;
   padding: 0 30px;
-  font-size: .8em;
+  font-size: 1.3em;
   text-align: center;
   text-decoration: none;
   font-weight: 500;
@@ -1996,18 +1996,18 @@ h1, h2, h3, h4, h5, h6 {
   padding-right: 30px;
 }
 
-.sf-arrows .sf-with-ul:after {
+/*.sf-arrows .sf-with-ul:after {
   content: "\f107";
   position: absolute;
   right: 15px;
   font-family: FontAwesome;
   font-style: normal;
   font-weight: normal;
-}
+}*/
 
-.sf-arrows ul .sf-with-ul:after {
+/*.sf-arrows ul .sf-with-ul:after {
   content: "\f105";
-}
+}*/
 
 /* Nav Meu Container */
 #nav-menu-container {
@@ -2191,7 +2191,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 }
 
 .section-gap {
-  padding: 120px 0;
+  padding: 100px 0;
 }
 
 .section-title {
@@ -2358,10 +2358,10 @@ body.mobile-nav-active #mobile-nav-toggle {
 }
 
 .banner-content .form-wrap {
-  background-color: #a998f6;
-  border: 1px solid #b8aaf3;
-  padding: 20px 0;
-  margin: 40px 0;
+  /*background-color: #a998f6;
+  border: 1px solid #b8aaf3;*/
+  padding: 10px 0;
+  margin: 30px 0;
 }
 
 .banner-content .form-wrap .nice-select {
@@ -3758,9 +3758,9 @@ body.mobile-nav-active #mobile-nav-toggle {
   font-size: 18px;
   font-weight: 600;
   text-align: center;
-  padding: 40px;
+  padding: 30px;
   color: #fff;
-  margin-bottom: 30px;
+  margin-bottom: 10px;
 }
 
 .contact-btns:hover {
@@ -4163,3 +4163,4 @@ body.mobile-nav-active #mobile-nav-toggle {
 .btn-skill{
     margin: 5px;
 }
+
