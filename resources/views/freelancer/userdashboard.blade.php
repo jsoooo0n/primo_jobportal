@@ -23,7 +23,7 @@
 									</div>
 									<div class="col-lg-2">
 										<ul class="btns">
-											<li><a href="#">Apply</a></li>
+											<li><a href="jobs/{{$job->id}}">Apply</a></li>
 										</ul>
 									</div>
 								</div>

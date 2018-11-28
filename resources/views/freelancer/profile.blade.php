@@ -5,32 +5,33 @@
     Profile - {{$user->name}}
 @endsection
 
-@section('select2css')
-   <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
 
+<!-- <style type="text/css">
+.chosen-container{
+  width: 100% !important;
+}
+</style> -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.4.2/chosen.min.css">
 
-@endsection
-
-
-<script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"/>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
+
 
 
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8 my-5">
+
+
+<section class="service-area section-gap" id="service">
+        <div class="container">
+          <div class="row d-flex justify-content-center">
+            <div class="col-md-12 my-5">
             @include('partials.alert')
             <div class="row mb-3">
                 <div class="col-md-2 text-center">
                     @if(!empty($profile->photo))
-                      <img class="p-0 profilepicture rounded-circle" src="/storage/photo/{{$profile->photo}}"   data-toggle="modal" data-target="#uploadphoto{{$user->id}}">   
+                      <img class="p-0 profilepicture" src="/storage/photo/{{$profile->photo}}"   data-toggle="modal" data-target="#uploadphoto{{$user->id}}">   
                     @else 
                        <i class="fas fa-user-circle fa-10x text-muted"  data-toggle="modal" data-target="#uploadphoto{{$user->id}}"></i>
                     @endif   
-
-
 
                     {{-- Upload Photo --}}
                 <div class="modal fade" id="uploadphoto{{$user->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -81,6 +82,7 @@
                        <br> <small class="h6 text-muted"><i class="fas fa-phone"></i>  {{$profile !== null ? $profile->mobile_num : ''}}</small>
                 </div>
             </div>
+    
 
             {{-- Edit Profile --}}
             @if ($profile !== null)
@@ -202,9 +204,9 @@
                     <div class="card-header">
                         <a class="card-title">
                            <h5 class="d-inline-block h5 text-success font-weight-bold mb-0">Skills</h5>
-                           <button class="btn btn-default float-right py-0 px-1" data-toggle="modal" data-target="#editskills{{$user->id}}">
+                           <!-- <button class="btn btn-default float-right py-0 px-1" data-toggle="modal" data-target="#editskills{{$user->id}}">
                                 <i class="far fa-edit text-success"></i> <span class="text-success h6">Edit</span>
-                            </button> 
+                            </button> --> 
                            <button class="btn btn-primary float-right  py-0 mr-1 px-1" data-toggle="modal" data-target="#addskills{{$user->id}}">
                                 <i class="far fa-edit text-white"></i> <span class="text-white h6">Add New</span>
                             </button>
@@ -212,7 +214,7 @@
                     </div>
                     <div class="card-body">
                       @foreach($user->skills as $skill)
-                       <button type="button" class="btn btn-sm btn-info mt-1">{{$skill->skill}}</button>
+                       <button type="button" class="btn btn-sm btn-info mt-1 btn-skill">{{$skill->skill}} </button>
                       @endforeach
 
                     </div>
@@ -230,7 +232,7 @@
                                 </button>
                               </div>
                               <div class="modal-body editskillsbody">
-                                 <select class="form-control selectedskills" multiple="multiple" placeholder="Select State" name="skills[]">
+                                 <select class="form-control selectedskills" multiple="true" placeholder="Select State" name="skills[]">
                                       <option></option>
                                       @foreach($skills as $skill)
                                         <option value="{{$skill->id}}">{{$skill->skill}}</option>
@@ -261,7 +263,7 @@
                               <div class="modal-body addskillsbody">
                                      <div class="form-group col-xs-12">
                                       
-                                        <select class="form-control select2" multiple="multiple" placeholder="Select State" name="skills[]">
+                                        <select class="form-control select2" multiple="true" placeholder="Select State" name="skills[]">
                                           <option></option>
                                           @foreach($skills as $skill)
                                             <option value="{{$skill->id}}">{{$skill->skill}}</option>
@@ -565,19 +567,48 @@
                     </div>
         </div>
     </div>
-</div>
+
+          </div>
+
+        </div>
+</section>
+
+
+
 @endsection
 @section('jsplugins')
-   <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.4.2/chosen.jquery.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
 
    <script type="text/javascript">
-    $(document).ready(function(){
-        $('.select2').select2({
-          width: 'resolve', 
-          placeholder: "Please select Skills",
-          allowClear: true
-        });
-        $('.selectedskills').select2().val({!! json_encode($user->skills()->allRelatedIds()) !!}).trigger('change');
-    });
+
+    $(".select2").chosen({
+    placeholder_text_multiple: "Please select Skills....",
+    width: "100%"
+    })
+
+    // $(".selectedskills").chosen({
+    // placeholder_text_multiple: "Please select Skills...."
+    // })
+
+    // $(".select2").chosen({
+    // placeholder_text_multiple: "Which are two of most productive days of your week"
+    // })
+     // $('.selectedskills').val({!! $user->skills()->allRelatedIds() !!}).trigger('change');
+     // $('.selectedskills').chosen().val({!! json_encode($user->skills()->allRelatedIds()) !!}).trigger('change');
+
+
+    // $(document).ready(function(){
+    //     $('.select2').select2({
+    //       width: 'resolve', 
+    //       placeholder: "Please select Skills",
+    //       allowClear: true
+    //     });
+    //     $('.selectedskills').select2().val({!! json_encode($user->skills()->allRelatedIds()) !!}).trigger('change');
+    // });
+    </script>
+    <script type="text/javascript">
+       $(".selectedskills").chosen( width: "100%").val({!! json_encode($user->skills()->allRelatedIds()) !!}).trigger('chosen:updated')
     </script>
 @endsection

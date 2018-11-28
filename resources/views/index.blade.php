@@ -268,46 +268,68 @@
             </section>
             <!-- End calto-action Area -->
 
-            <!-- Start download Area -->
-            <section class="download-area section-gap" id="app">
+            <!-- Start service Area -->
+            <section class="service-area section-gap" id="service">
                 <div class="container">
-                    <div class="row">
-                        <div class="col-lg-6 download-left">
-                            <img class="img-fluid" src="img/d1.png" alt="">
-                        </div>
-                        <div class="col-lg-6 download-right">
-                            <h1>Download the <br>
-                            Job Listing App Today!</h1>
-                            <p class="subs">
-                                It won’t be a bigger problem to find one video game lover in your neighbor. Since the introduction of Virtual Game, it has been achieving great heights so far as its popularity and technological advancement are concerned.
+                    <div class="row d-flex justify-content-center">
+                        <div class="col-md-8 pb-40 header-text">
+                            <h1>Why Choose Us</h1>
+                            <p>
+                                Who are in extremely love with eco friendly system.
                             </p>
-                            <div class="d-flex flex-row">
-                                <div class="buttons">
-                                    <i class="fa fa-apple" aria-hidden="true"></i>
-                                    <div class="desc">
-                                        <a href="#">
-                                            <p>
-                                                <span>Available</span> <br>
-                                                on App Store
-                                            </p>
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="buttons">
-                                    <i class="fa fa-android" aria-hidden="true"></i>
-                                    <div class="desc">
-                                        <a href="#">
-                                            <p>
-                                                <span>Available</span> <br>
-                                                on Play Store
-                                            </p>
-                                        </a>
-                                    </div>
-                                </div>                                  
-                            </div>                      
                         </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-4 col-md-6">
+                            <div class="single-service">
+                                <h4><span class="lnr lnr-user"></span>Expert Technicians</h4>
+                                <p>
+                                    Usage of the Internet is becoming more common due to rapid advancement of technology and power.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6">
+                            <div class="single-service">
+                                <h4><span class="lnr lnr-license"></span>Professional Service</h4>
+                                <p>
+                                    Usage of the Internet is becoming more common due to rapid advancement of technology and power.
+                                </p>                                
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6">
+                            <div class="single-service">
+                                <h4><span class="lnr lnr-phone"></span>Great Support</h4>
+                                <p>
+                                    Usage of the Internet is becoming more common due to rapid advancement of technology and power.
+                                </p>                                
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6">
+                            <div class="single-service">
+                                <h4><span class="lnr lnr-rocket"></span>Technical Skills</h4>
+                                <p>
+                                    Usage of the Internet is becoming more common due to rapid advancement of technology and power.
+                                </p>                
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6">
+                            <div class="single-service">
+                                <h4><span class="lnr lnr-diamond"></span>Highly Recomended</h4>
+                                <p>
+                                    Usage of the Internet is becoming more common due to rapid advancement of technology and power.
+                                </p>                                
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6">
+                            <div class="single-service">
+                                <h4><span class="lnr lnr-bubble"></span>Positive Reviews</h4>
+                                <p>
+                                    Usage of the Internet is becoming more common due to rapid advancement of technology and power.
+                                </p>                                    
+                            </div>
+                        </div>                      
                     </div>
                 </div>  
             </section>
-            <!-- End download Area -->
+            <!-- End service Area -->
 @endsection
