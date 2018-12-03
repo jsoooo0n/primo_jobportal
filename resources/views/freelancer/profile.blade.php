@@ -194,16 +194,16 @@
         </div>
 
 
-            <div class="row mb-3">
+            <div class="row mb-3 p-3">
                 <div class="col-12">
                   <h4 class="h5 text-info">Overview</h4>
                   <p>{!! $profile !== null ? nl2br(e($profile->overview)) : '' !!}</p>
                 </div>
             </div>      
                 <div class="card mb-0">
-                    <div class="card-header">
+                    <div class="card-header callto-action-area">
                         <a class="card-title">
-                           <h5 class="d-inline-block h5 text-success font-weight-bold mb-0">Skills</h5>
+                           <h5 class="d-inline-block h5 text-white font-weight-bold mb-0">Skills</h5>
                            <!-- <button class="btn btn-default float-right py-0 px-1" data-toggle="modal" data-target="#editskills{{$user->id}}">
                                 <i class="far fa-edit text-success"></i> <span class="text-success h6">Edit</span>
                             </button> --> 
@@ -283,9 +283,9 @@
 
 
 
-                    <div class="card-header">
+                    <div class="card-header callto-action-area">
                         <a class="card-title">
-                          <h5 class="d-inline-block h5 text-success font-weight-bold mb-0">Educational Background</h5>  
+                          <h5 class="d-inline-block h5 text-white font-weight-bold mb-0">Educational Background</h5>  
                            <button class="btn btn-primary float-right  py-0 mr-1 px-1" data-toggle="modal" data-target="#addeducation{{$user->id}}">
                             <i class="far fa-edit text-white"></i> <span class="text-white h6">Add New</span>
                            </button>
@@ -427,9 +427,9 @@
 
 
 
-                    <div class="card-header">
+                    <div class="card-header callto-action-area">
                         <a class="card-title">
-                          <h5 class="d-inline-block h5 text-success font-weight-bold mb-0">Work History</h5>
+                          <h5 class="d-inline-block h5 text-white font-weight-bold mb-0">Work History</h5>
                            <button class="btn btn-primary float-right  py-0 mr-1 px-1" data-toggle="modal" data-target="#addwork{{$user->id}}">
                                 <i class="far fa-edit text-white"></i> <span class="text-white h6">Add New</span>
                            </button>

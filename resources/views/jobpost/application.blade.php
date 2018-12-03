@@ -10,8 +10,8 @@
        <div class="col-md-10 my-5">            
             @include('partials.alert')
             <div class="card card-default">  
-                <div class="card-header">
-                	<h4 class="h4 text-muted">JOB DETAILS</h4>
+                <div class="card-header callto-action-area">
+                	<h4 class="h4 text-white">JOB DETAILS</h4>
                 </div>
                 <div class="card-body pt-0 table-responsive py-3">
                 	<div class="row">
@@ -59,8 +59,8 @@
             <div class="card card-default mt-5">  
             	<form action="{{url("/job/application/$job->id/store")}}" method="POST">
             		{{ csrf_field() }}
-	                <div class="card-header">
-	                	<h4 class="h4 text-muted">APPLICATION LETTER</h4>
+	                <div class="card-header callto-action-area">
+	                	<h4 class="h4 text-white">APPLICATION LETTER</h4>
 	                </div>
 	                <div class="card-body pt-0 table-responsive py-3">
 	                	  <div class="form-group">
@@ -69,7 +69,7 @@
 						  </div>
 	                </div>
 	                <input type="hidden" value="{{$job->id}}" name="job">
-	                <div class="card-header">
+	                <div class="card-header callto-action-area text-center">
 	                	<button type="submit" class="btn btn-primary btn-lg px-5">SUBMIT</button>
 	                </div>
                 </form>

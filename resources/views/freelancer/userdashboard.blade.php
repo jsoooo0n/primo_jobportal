@@ -12,7 +12,7 @@
 					<div class="row d-flex justify-content-center">
 						<div class="menu-content col-lg-9">
 							<div class="title text-center">
-								<h1 class="mb-10 mt-20 text-white">Jobseeker List</h1>
+								<h1 class="mb-10 mt-20 text-white">Job List</h1>
 							</div>	
 						</div>
 					</div>	

@@ -13,8 +13,10 @@
                     <div class="row justify-content-center">
                     
                         <div class="col-lg-7">
-                            <h3 class="h3 text-info mb-4">{{$job->title}}</h3>
-                               <p class="h5 text-success">Budget: <i class="fas fa-dollar-sign"></i>{{number_format($job->budget)}}</p>
+                            <div class="container callto-action-area">
+                            <h3 class="h3 text-white mb-4 p-3 text-center">{{$job->title}}</h3>
+                            </div>
+                              <p><b>Overview:</b></p>
                                {!! $job->body !!}
                         </div>
 
@@ -43,6 +45,12 @@
                                         <i class="fas fa-tags"></i> Category: 
                                     </span>
                                     {{ ucwords($job->category->category_name) }}
+                                </li>
+                                <li class="mb-2">
+                                    <span class="text-success">
+                                        <i class="fas fa-dollar-sign"></i> Budget: 
+                                    </span>
+                                    {{number_format($job->budget)}}
                                 </li>
                             </ul>
                             <hr>

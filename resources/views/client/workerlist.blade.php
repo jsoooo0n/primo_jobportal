@@ -6,12 +6,6 @@
 
 @section('content')
 
-
-
-
-
-
-
 <section class="post-area section-gap">
 
 				<div class="container callto-action-area">
@@ -30,29 +24,38 @@
 						<div class="col-lg-8 post-list">
 							@if(count($jobs) > 0)
 		                    @foreach ($jobs as $job)
-		                    <div class="card mb-3">
-		                        <h5 class="h5 card-header"><a href="/applicant/profile/{{$job->user_id}}" class="text-info">{{$job->name}}</a></h5>
-		                        <div class="card-block px-3">		                         
-			                        <p class="small">
-			                        	<span>{{ ucwords($job->job_title) }}</span><br>
-										<span>{{ ucwords($job->overview) }}</span>
-
-			                        </p>
-			                        <p class="small">
-			                        	<span><span class="text-success"><i class="fas fa-briefcase"></i> Job Type:</span> {{ ucwords($job->position_type) }}</span>	
-			                        	<br>
-			                        	<span><span class="text-success"><i class="fas fa-hourglass-end"></i> Industry:</span> {{ ucwords($job->category_name) }}</span>
-			                        	<br>
-			                        	<span><span class="text-success"><i class="fas fa-tags"></i> Salary:</span> {{ $job->salary_from }} - {{ $job->salary_from }}</span>
-			                        </p>
-		                  	  </div>
-		                    </div>	    
-		                    @endforeach
+							<div class="single-post flex-row">
+								<div class="details">
+									<div class="title flex-row justify-content-between row">
+										<div class="col-lg-10">
+										<div class="titles">
+											<a href="/applicant/profile/{{$job->user_id}}"><h4>{{$job->name}}</h4></a>			
+										</div>
+									</div>
+									<div class="col-lg-2">
+										<ul class="btns">
+											<li><a href="/applicant/profile/{{$job->user_id}}">View</a></li>
+										</ul>
+									</div>
+								</div>
+									<p>
+										{!! str_limit($job->overview, 150)!!}
+									</p>
+									<span><span class=""><i class="fas fa-briefcase"></i> Job Type:</span> {{ ucwords($job->position_type) }}</span>	
+			                        <br>
+			                        <span><span class=""><i class="fas fa-hourglass-end"></i> Industry:</span> {{ ucwords($job->category_name) }}</span>
+			                        <br>
+			                        <span><span class=""><i class="fas fa-tags"></i> Salary:</span> {{ $job->salary_from }} - {{ $job->salary_from }}</span>
+								</div>
+							</div>
+							@endforeach
 		                    {{ $jobs->links() }}
 		                @else 
 		                	<h2 class="h2 text-muted text-center">NO RESULT FOUND</h2>
 		                @endif
 						</div>
+
+
 						
 						<div class="col-lg-4 sidebar">
 							<div class="single-slidebar">

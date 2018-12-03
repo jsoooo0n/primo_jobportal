@@ -11,27 +11,31 @@
 
 
 @section('content')
+<section class="service-area section-gap" id="service">
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-8 my-5">
+        <div class="col-md-12 my-5">
             @include('partials.alert')
-            <div class="row mb-3">
+            <div class="row mb-3 p-3">
                 <div class="col-md-2 text-center">
                     @if(!empty($profile->photo))
-                      <img class="p-0 profilepicture rounded-circle" src="/storage/photo/{{$profile->photo}}"   data-toggle="modal" data-target="#uploadphoto{{$user->id}}">   
+                      <img class="p-0 profilepicture" src="/storage/photo/{{$profile->photo}}"   data-toggle="modal" data-target="#uploadphoto{{$user->id}}">   
                     @else 
                        <i class="fas fa-user-circle fa-10x text-muted"></i>
                     @endif  
                 </div>
-                <div class="col-md-10 pl-5">
+                <div class="col-md-7 pl-5">
                     <h3 class="h3 text-info d-inline-block">{{$user->name}}</h3>
                     <h5 class="h5">{{$profile !== null ? $profile->job_title : ''}}</h5>
                     <small class="h6 text-muted"><i class="fas fa-map-marker-alt"></i>  {{$profile !== null ? $profile->city.', '.$profile->province.', '.$profile->country : ''}}</small>
+                    <br> <small class="h6 text-muted"><i class="fas fa-at"></i>   {{$user !== null ? $user->email : ''}}</small>
+                    <br> <small class="h6 text-muted"><i class="fas fa-birthday-cake"></i>   {{$profile !== null ? $profile->birthdate : ''}}</small>
+                    <br> <small class="h6 text-muted"><i class="fas fa-phone"></i>  {{$profile !== null ? $profile->mobile_num : ''}}</small>
+
                 </div>
-                <!-- add
-                Birthday
-                mobile number
-                email -->
+                 <div class="col-md-3 text-center mt-5">
+                  <a href="#" class="genric-btn info">Send Message</a>
+                 </div>
             </div>
             <div class="row mb-3">
                 <div class="col-12">
@@ -40,19 +44,19 @@
                 </div>
             </div>      
               <div class="card mb-0">
-                  <div class="card-header">
+                  <div class="card-header callto-action-area">
                       <a class="card-title">
-                         <h5 class="d-inline-block h5 text-success font-weight-bold mb-0">Skills</h5>
+                         <h5 class="d-inline-block h5 text-white font-weight-bold mb-0">Skills</h5>
                       </a>
                   </div>
                   <div class="card-body">
                     @foreach($user->skills as $skill)
-                     <button type="button" class="btn btn-sm btn-info mt-1">{{$skill->skill}}</button>
+                     <button type="button" class="btn btn-sm btn-info mt-1 btn-skill">{{$skill->skill}}</button>
                     @endforeach
                   </div>
-                  <div class="card-header">
+                  <div class="card-header callto-action-area">
                       <a class="card-title">
-                        <h5 class="d-inline-block h5 text-success font-weight-bold mb-0">Educational Background</h5> 
+                        <h5 class="d-inline-block h5 text-white font-weight-bold mb-0">Educational Background</h5> 
                       </a>
                   </div>
                   <div class="card-body educationBackgroundBody">                      
@@ -66,9 +70,9 @@
                       </div>
                       @endforeach
                   </div>
-                  <div class="card-header">
+                  <div class="card-header callto-action-area">
                       <a class="card-title">
-                        <h5 class="d-inline-block h5 text-success font-weight-bold mb-0">Work History</h5>
+                        <h5 class="d-inline-block h5 text-white font-weight-bold mb-0">Work History</h5>
                       </a>
                   </div>
                   <div>
@@ -88,4 +92,5 @@
         </div>
     </div>
 </div>
+</section>
 @endsection
